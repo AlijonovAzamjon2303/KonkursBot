@@ -11,3 +11,9 @@ def get_all_chanel_keyboard():
         chanels_inline_buttons.append(inline_button)
 
     return InlineKeyboardMarkup(inline_keyboard=chanels_inline_buttons)
+
+def get_confir_to_delete(id):
+    confirm = InlineKeyboardButton(text="O'chirish", callback_data=f"confirm_{id}")
+    cancel = InlineKeyboardButton(text="Bekor qilish", callback_data=f"cancel_{id}")
+
+    return InlineKeyboardMarkup(inline_keyboard=[[confirm, cancel]])
